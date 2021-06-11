@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-light background-transparent">
+  <div>
+    <img class="br-50 p-30" src="../../assets/LOGO3.png" alt="life learning logo" width="250px" height="80px">
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse d-flex" id="conteudoNavbarSuportado">
+    <ul id="ul-cursos" class="m-0 p-0">
+      <li class="nav-item d-flex align-items-center" >
+        <a class="nav-link text-left p-0 font-weight-bold fs-15 text-dark" style="color: black; cursor: pointer;">Sobre nós</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav m-auto">
+      <li class="nav-item active" style="margin-right: 18vh;">
+        <a class="nav-link font-weight-bold fs-15 text-dark" routerLink='/inicio'>Home<span class="sr-only" >(página atual)</span></a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <div class="nome-foto d-flex align-items-center">
+        <p class="m-0 font-weight-bold fs-15 text-dark">{{nome}}</p>
+        <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+          <ul class="navbar-nav mr-auto d-flex align-items-center">
+            <li class="nav-item active p-2">
+              <a style="cursor: pointer;" class="dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="{{foto}}" alt="imagem do user" width="50px" height="50px" class="img-fluid rounded-circle">
+              </a>
+
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                <div class="edit d-flex align-items-center">
+                  <i class="fas fa-user-edit ml-2 mr-3"></i>
+                  <a class="dropdown-item p-0" [routerLink]="['/user-edit', id]">Editar</a>
+                </div>
+
+                <div class="exit d-flex align-items-center">
+                  <i class="fas fa-door-open text-danger ml-2 mr-3"></i>
+                  <a class="dropdown-item text-danger p-0" href="#" (click)='sair()'>Sair</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</nav>

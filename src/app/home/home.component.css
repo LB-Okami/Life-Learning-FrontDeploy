@@ -1,0 +1,44 @@
+.cor-nav{
+    background-image: linear-gradient(to right, rgb(82, 197, 153), rgb(81, 116, 212));
+}
+
+.cor-fundo {
+    background-image: url(https://medatech.com/wp-content/uploads/2017/11/Website-Background.png);
+    
+}
+#nav-ul {
+    list-style: none;
+}
+
+.containerEsq {
+    margin-left: 18px;
+}
+
+.sobreNos {
+    background-image: linear-gradient(to right, rgb(81, 116, 212), rgb(82, 197, 153));
+    border-radius: 80px;
+}
+
+.shadow {
+    text-shadow: 0.1em 0.1em 0.2em rgb(0, 12, 11)
+}
+
+.shadow-body {
+    text-shadow: 0.1em 0.1em 0.2em rgb(255, 255, 255)
+}
+
+.nav-link {
+    color: white;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.sb {
+    height: 450px;
+    width: 450px;
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
+    /* sombreamento das imagens */
+}

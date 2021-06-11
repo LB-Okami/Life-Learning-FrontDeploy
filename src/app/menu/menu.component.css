@@ -1,0 +1,19 @@
+.background-nav{
+    background-color: #24292E;
+}
+
+ul{
+    list-style: none;
+}
+
+.p-2{
+    padding-right: 4px;
+}
+
+#ul-cursos{
+    list-style: none;
+}
+
+.fs-15 {
+  font-size: 15pt;
+}

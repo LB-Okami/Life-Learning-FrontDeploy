@@ -1,0 +1,33 @@
+
+#bg-color{
+    background-image: url('https://i.imgur.com/4oAPUik.png');
+    background-size:100vh;
+    min-height: 100vh;
+    max-width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.color-font{
+    color: rgb(192, 38, 115);
+}
+
+
+
+.margem{
+    margin-top: 100px;
+}
+
+.form-group{
+    background-color: transparent;
+}
+
+#card{
+    background-color: #ffffff99;
+}
+
+.auto-left{
+    margin: auto;
+}
+

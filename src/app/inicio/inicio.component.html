@@ -1,0 +1,187 @@
+<div class="body container-fluid background bg-image">
+
+  <div class="row bordas">
+
+    <div class="col-md-3 d-flex justify-content-center">
+
+      <ul class="list-group magin-top font-weight-bold" style="list-style: none;">
+        <div class="vertical-menu" style="width: 100%;">
+          <li style="width: 45vh"><a href="#"
+              class="active text-center bg-dark text-white d-flex justify-content-start align-items-center" id="fs-20"
+              href="#"><i class="fa fa-graduation-cap mr-2" aria-hidden="true"></i> Cursos</a></li>
+          <li><a href="#">Finanças básica</a></li>
+          <li><a href="#">Libras</a></li>
+          <li><a href="#">Política básica</a></li>
+          <li> <a href="#">História</a></li>
+          <li><a href="#">Literatura</a></li>
+        </div>
+      </ul>
+
+    </div>
+
+    <div class="col-md-6 bg-lkn">
+      <a style="cursor: pointer;" data-toggle="modal" data-target="#novaPostagem">
+        <div class="jumbotron d-flex justify-content-center magin-top b">
+          <h3>Compartilhe conosco sua experiência </h3>
+        </div>
+      </a>
+
+      <div class="row d-flex justify-content-center bg-lkn">
+        <div class="col-md-12">
+          <div class="d-flex justify-content-between">
+            <p></p>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Ordenar postagens
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" (click)='findAllMinhasPostagens()'>Minhas postagens</a>
+                <a class="dropdown-item" (click)='getAllPostagens()'>Todas as postagens</a>
+              </div>
+
+              <div class="row d-flex-justify-content-center mt-5 mb-5">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="titulo"
+                      placeholder="Digite um título de postagem para pesquisar" [(ngModel)]='tituloTema'
+                      (keyup)='findByTemaPostagem()'>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div *ngIf='temaOk'>
+            <h1 class="text-center">Postagens por temas</h1>
+            <div *ngFor='let tema of listaTemas'>
+              <div class="card text-center mt-5 mb-5" *ngFor='let item of tema.postagem | orderBy : key : reverse'>
+                <div class="card-body">
+                  <p class='card-text text-left fonteNomeData '> <small class="text-muted">{{ item.date |
+                      date:'dd/MM/yyyy'}} às {{item.date | date:'HH:mm'}}</small></p>
+                  <h5 class="card-title">{{item.titulo}}</h5>
+                  <p class="card-text">{{tema.titulo}}</p>
+                  <p class="card-text">{{item.texto}}</p>
+                  <img class="card-img-top post img-fluid" src="{{item.link}}" alt="imagem da postagem"
+                    style='height: 50vh; max-width: 100%;'>
+                  <p class="card-text">{{item.tag}}</p>
+                  <div class="buttons-crud">
+                    <button class="btn btn-info mr-4" [routerLink]="['/postagem-edit', item.id]">Editar</button>
+                    <button class="btn btn-danger" (click)='deletar(item.id)'>Deletar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div *ngIf='temaOk == false'>
+            <div *ngIf='postagensUser == false'>
+              <h1 class="text-center">Feed</h1>
+              <div class="card text-center mt-5 mb-5" *ngFor='let item of listaPostagens | orderBy : key : reverse'>
+                <div class="card-body">
+                  <p class='card-text text-left fonteNomeData '> <small class="text-muted">{{item.usuario.nome}} | {{
+                      item.date | date:'dd/MM/yyyy'}} às {{item.date | date:'HH:mm'}}</small></p>
+
+                  <h5 class="card-title">{{item.titulo}}</h5>
+                  <p class="card-text">{{item.tema.titulo}}</p>
+                  <p class="card-text">{{item.texto}}</p>
+                  <img class="card-img-top post img-fluid" src="{{item.link}}" alt="imagem da postagem"
+                    style='height: 50vh; max-width: 100%;'>
+                  <p class="card-text">{{item.tag}}</p>
+                </div>
+              </div>
+
+            </div>
+
+            <div *ngIf='postagensUser'>
+              <h1 class="text-center">Minhas postagens</h1>
+              <div class="card text-center mt-5 mb-5" *ngFor='let item of user.postagem | orderBy : key : reverse'>
+                <div class="card-body">
+                  <p class='card-text text-left fonteNomeData '> <small class="text-muted">{{ item.date |
+                      date:'dd/MM/yyyy'}} às {{item.date | date:'HH:mm'}}</small></p>
+                  <h5 class="card-title">{{item.titulo}}</h5>
+                  <p class="card-text">{{item.tema.titulo}}</p>
+                  <p class="card-text">{{item.texto}}</p>
+                  <img class="card-img-top post img-fluid" src="{{item.link}}" alt="imagem da postagem"
+                    style='height: 50vh; max-width: 100%;'>
+                  <p class="card-text">{{item.tag}}</p>
+                  <div class="buttons-crud">
+                    <button class="btn btn-info mr-4" [routerLink]="['/postagem-edit', item.id]">Editar</button>
+                    <button class="btn btn-danger" (click)='deletar(item.id)'>Deletar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="col-md-3 text-center bordas">
+      <h1 class="magin-top text-dark mb-5 fs-60 font-weight-bold">Trends</h1>
+      <img style="width: 300px;" src="https://i.imgur.com/mW79B85.png" alt="trends">
+      <div class="m-0 p-0 font-italic cor-tags">
+        <!-- <h2>#VacinaJá</h2>
+      <h2>#Tecnologia</h2>
+      <h3>#Cinema</h3>
+      <h4>#Bitcoin</h4>
+      <h4>#MeioAmbiente</h4>
+      <h5>#Música</h5>
+      <h5>#Política</h5> -->
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="novaPostagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="TituloModalCentralizado">Nova postagem</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="titulo">Titulo</label>
+          <input [(ngModel)]='postagem.titulo' type="text" class="form-control" placeholder="Digite o título">
+        </div>
+        <div class="form-group">
+          <label for="texto">Texto</label>
+          <textarea [(ngModel)]='postagem.texto' name="texto" id="texto" rows="4" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="tema">Escolha um tema ou <a href="" routerLink='/tema' data-dismiss="modal">cadastre um novo</a>:
+          </label>
+          <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'>
+            <option *ngFor='let item of listaTemas' value="{{item.id}}">{{item.titulo}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="tag">Insira uma tag</label>
+          <input [(ngModel)]='postagem.tag' type="text" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="tag">Insira um link de uma imagem</label>
+          <input [(ngModel)]='postagem.link' type="text" class="form-control">
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-success" (click)='publicar()' data-dismiss="modal">Publicar</button>
+      </div>
+    </div>
+  </div>
+</div>

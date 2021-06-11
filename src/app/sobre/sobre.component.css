@@ -1,0 +1,47 @@
+.img{
+    width: 200px;
+    height: 60px;
+}
+
+.background{
+    background-image: url("https://i.imgur.com/LLEVaw0.jpg");
+}
+.container1{
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    padding-left: 150px;
+    padding-right: 150px;
+
+}
+
+.tm-img{
+    border-radius: 250px;
+    width: 250px;
+    height: 250px;
+}
+
+.p-20{
+    padding: 20px;
+}
+
+.background-nav{
+    background-image: linear-gradient(to right, rgb(81, 116, 212), rgb(82, 197, 153));
+    align-items: center;
+}
+
+.color-txt{
+    color: #471852;
+
+}
+
+.cor-nav{
+    background-image: linear-gradient(to right, rgb(81, 116, 212), rgb(82, 197, 153));
+}
+
+.nav-link {
+    color: white;
+}
+
+
