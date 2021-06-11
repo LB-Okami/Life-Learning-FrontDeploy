@@ -2,6 +2,7 @@ import { Router } from '@angular/router';
 import { environment } from './../../environments/environment.prod';
 import { Component, OnInit } from '@angular/core';
 import { User } from '../model/User';
+import { AlertasService } from '../service/alertas.service';
 
 @Component({
   selector: 'app-menu',
@@ -16,7 +17,9 @@ export class MenuComponent implements OnInit {
   id = environment.id
 
   constructor(
-    private router: Router
+    private router: Router,
+    private alertas: AlertasService
+
   ) { }
 
   ngOnInit() {
@@ -33,4 +36,17 @@ export class MenuComponent implements OnInit {
     environment.foto = ''
   }
 
+
+  deslogar() {
+    this.alertas.showAlertDanger('Sua sessão expirou, faça o login novamente')
+
+    this.router.navigate(['/sobre'])
+    environment.token = ''
+    environment.nome = ''
+    environment.id = 0
+    environment.foto = ''
+  }
+
 }
+
+

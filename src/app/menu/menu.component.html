@@ -8,17 +8,17 @@
   <div class="collapse navbar-collapse d-flex" id="conteudoNavbarSuportado">
     <ul id="ul-cursos" class="m-0 p-0">
       <li class="nav-item d-flex align-items-center" >
-        <a class="nav-link text-left p-0 font-weight-bold fs-15 text-dark" style="color: black; cursor: pointer;">Sobre nós</a>
+        <a class="nav-link text-left p-0 font-weight-bold fs-15 text-dark"  style="color: black; cursor: pointer;" (click)='deslogar()' >Sobre nós</a>
       </li>
     </ul>
     <ul class="navbar-nav m-auto">
       <li class="nav-item active" style="margin-right: 18vh;">
-        <a class="nav-link font-weight-bold fs-15 text-dark" routerLink='/inicio'>Home<span class="sr-only" >(página atual)</span></a>
+        <a class="nav-link font-weight-bold fs-15 text-dark" routerLink='/inicio'>Início<span class="sr-only" >(página atual)</span></a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <div class="nome-foto d-flex align-items-center">
-        <p class="m-0 font-weight-bold fs-15 text-dark">{{nome}}</p>
+        <p class="m-0 font-weight-bold fs-15 nomeusuario">{{nome}}</p>
         <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
           <ul class="navbar-nav mr-auto d-flex align-items-center">
             <li class="nav-item active p-2">

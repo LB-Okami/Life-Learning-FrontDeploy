@@ -17,3 +17,18 @@ ul{
 .fs-15 {
   font-size: 15pt;
 }
+
+.nomeusuario{
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  /* fundo gradiente */
+  background-image: linear-gradient(to right, rgb(81, 116, 212), rgb(82, 197, 153));
+  /* agora colocamos o fundo gradiente dentro do texto com essa propriedade */
+  background-clip: text;
+  -webkit-background-clip: text;
+  /* a cor do texto deve estar como transparent */
+  color: transparent;
+    
+
+}

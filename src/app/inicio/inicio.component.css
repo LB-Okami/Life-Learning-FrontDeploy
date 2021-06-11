@@ -6,8 +6,8 @@
   background-color: #F3F2EF;
 }
 
-.fs-60 {
-  font-size: 60pt;
+.fs-40 {
+  font-size: 40pt;
 }
 
 .magin-top {
@@ -29,7 +29,7 @@
 }
 
 .bordas {
-  background-image: url(https://images.freeimages.com/images/large-previews/a3b/website-rays-background-pattern-1637863.png);
+  background-image: url('https://i.imgur.com/h7jYaVZ.png');
 }
 
 .bordas-centro {
@@ -96,4 +96,10 @@ background-color: #04AA6D;
 
 a {
   cursor: pointer;
+}
+
+.bordaCompartilhe{
+  border: 2px solid red;
+  border-radius: 40px;
+  
 }

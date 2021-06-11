@@ -1,11 +1,19 @@
 .cor-nav{
-    background-image: linear-gradient(to right, rgb(82, 197, 153), rgb(81, 116, 212));
+background-color: transparent;
 }
 
 .cor-fundo {
-    background-image: url(https://medatech.com/wp-content/uploads/2017/11/Website-Background.png);
-    
+    background-image: url(https://i.imgur.com/aNx1XDh.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
+
+.form-group{
+    background-color: transparent;
+    background-color: #ffffffec;
+}
+
 #nav-ul {
     list-style: none;
 }
@@ -15,7 +23,7 @@
 }
 
 .sobreNos {
-    background-image: linear-gradient(to right, rgb(81, 116, 212), rgb(82, 197, 153));
+   background-color: white;
     border-radius: 80px;
 }
 

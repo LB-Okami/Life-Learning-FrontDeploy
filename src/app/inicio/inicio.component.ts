@@ -35,6 +35,8 @@ export class InicioComponent implements OnInit {
   key = 'data'
   reverse = true
 
+  foto = environment.foto
+
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -143,5 +145,7 @@ export class InicioComponent implements OnInit {
         })
       }
     }
+
+    
 
   }
