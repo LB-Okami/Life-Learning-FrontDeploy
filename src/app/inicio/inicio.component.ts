@@ -104,14 +104,12 @@ export class InicioComponent implements OnInit {
 
       if(this.postagem.titulo == null || this.postagem.texto == null || this.postagem.tema == undefined){
 
-        this.alertas.showAlertInfo('Insira um título.')
+        this.alertas.showAlertInfo('Insira um título ou um texto.')
       }
 
-      if(this.postagem.link == null) {
+      if(this.postagem.link == null || this.postagem.texto == undefined) {
         this.postagem.link = 'https://media.discordapp.net/attachments/836217886795235348/853998403381362698/plano_de_fundo_zoom2.png?width=828&height=551'
       }
-
-
 
       console.log(this.postagem.tema)
 
