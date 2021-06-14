@@ -78,10 +78,6 @@
                     <img class="card-img-top post img-fluid" src="{{item.link}}" alt="imagem da postagem"
                     style='height: 50vh; max-width: 100%;'>
                     <p class="card-text">{{item.tag}}</p>
-                    <div class="buttons-crud">
-                      <button class="btn btn-info mr-4" [routerLink]="['/postagem-edit', item.id]">Editar</button>
-                      <button class="btn btn-danger" (click)='deletar(item.id)'>Deletar</button>
-                    </div>
                   </div>
                 </div>
               </div>
