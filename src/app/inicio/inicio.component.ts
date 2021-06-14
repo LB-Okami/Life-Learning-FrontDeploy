@@ -8,6 +8,7 @@ import { TemaService } from '../service/tema.service';
 import { Tema } from '../model/Tema';
 import { User } from '../model/User';
 import { AlertasService } from '../service/alertas.service';
+import { url } from 'inspector';
 
 @Component({
   selector: 'app-inicio',
@@ -107,6 +108,10 @@ export class InicioComponent implements OnInit {
         this.alertas.showAlertInfo('Insira um título.')
       }
 
+      if(this.postagem.link == null) {
+        this.postagem.link = 'https://media.discordapp.net/attachments/836217886795235348/853998403381362698/plano_de_fundo_zoom2.png?width=828&height=551'
+      }
+
       console.log(this.postagem.tema)
 
       this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
@@ -146,6 +151,6 @@ export class InicioComponent implements OnInit {
       }
     }
 
-    
+
 
   }
