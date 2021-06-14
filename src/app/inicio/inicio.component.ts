@@ -98,7 +98,6 @@ export class InicioComponent implements OnInit {
     publicar(){
       this.tema.id = this.idTema
       this.postagem.tema = this.tema
-
       this.user.id = this.idUser
       this.postagem.usuario = this.user
 
@@ -107,7 +106,7 @@ export class InicioComponent implements OnInit {
         this.alertas.showAlertInfo('Insira um título ou um texto.')
       }
 
-      if(this.postagem.link == null || this.postagem.texto == undefined) {
+      if(this.postagem.link == null || this.postagem.link == undefined) {
         this.postagem.link = 'https://media.discordapp.net/attachments/836217886795235348/853998403381362698/plano_de_fundo_zoom2.png?width=828&height=551'
       }
 
