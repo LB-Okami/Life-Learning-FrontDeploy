@@ -26,6 +26,7 @@
 .jumbotron {
   background: linear-gradient(#e66465, #9198e5);
   color: white;
+
 }
 
 .bordas {
@@ -101,5 +102,5 @@ a {
 .bordaCompartilhe{
   border: 2px solid red;
   border-radius: 40px;
-  
+
 }
