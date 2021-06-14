@@ -8,7 +8,6 @@ import { TemaService } from '../service/tema.service';
 import { Tema } from '../model/Tema';
 import { User } from '../model/User';
 import { AlertasService } from '../service/alertas.service';
-import { url } from 'inspector';
 
 @Component({
   selector: 'app-inicio',
