@@ -13,6 +13,14 @@ ul.social-network li{
     padding: 5px;
 }
 
+#card-hover {
+  transition: 0.5s;
+}
+
+#card-hover:hover {
+  background-color: #202830;
+}
+
 .fa{
     font-size: 15pt;
     color: white;

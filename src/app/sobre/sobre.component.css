@@ -1,3 +1,7 @@
+.fs-42 {
+  font-size: 42pt;
+}
+
 .img{
     width: 200px;
     height: 60px;
@@ -51,4 +55,23 @@
     color: white;
 }
 
+#link-list {
+  list-style: none;
+}
+
+#github-icon {
+  transition: 0.5s;
+}
+
+#linkedin-icon {
+  transition: 0.5s;
+}
+
+#github-icon {
+  color: #202830;
+}
+
+#github-icon:hover {
+  color: black;
+}
 
